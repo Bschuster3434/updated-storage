@@ -8,7 +8,7 @@ pragma solidity >=0.7.0 <0.9.0;
 contract Storage {
 
     uint256 number;
-    address sender
+    address sender;
 
     /**
      * @dev Store value in variable
@@ -16,14 +16,14 @@ contract Storage {
      */
     function store(uint256 num) public {
         number = num;
-        
+        sender = msg.sender;
     }
 
     /**
      * @dev Return value 
      * @return value of 'number'
      */
-    function retrieve() public returns (uint256){
+    function retrieveNumber() public view returns (uint256){
         return number;
     }
 
@@ -32,7 +32,7 @@ contract Storage {
      * @dev Return value 
      * @return value of 'sender'
      */
-    function retrieve() public returns (uint256){
+    function retrieveSender() public view returns (address){
         return sender;
     }
 }
